@@ -1,8 +1,12 @@
 services:
   app:
     build:
-      context: ./
+      context: .
       dockerfile: Dockerfile
-    volumes:
-      - "./app:/app"
+    command: make test
+  app-production:
+    build:
+      context: .
+      dockerfile: Dockerfile.production
+    image: gpiento/docker-project-74:lastest
     command: make test
