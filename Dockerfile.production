@@ -1,7 +1,7 @@
 # Dockerfile.production
 
 FROM node:20.12.2
-WORKDIR /app
+#WORKDIR .
 
 # Важно для кеширования слоев
 COPY app/package.json package.json

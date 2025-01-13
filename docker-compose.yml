@@ -8,5 +8,5 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.production
-    image: gpiento/docker-project-74:lastest
+    image: gpiento/docker-project-74
     command: make test
