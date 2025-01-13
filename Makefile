@@ -13,7 +13,7 @@ prepare-env:
 	cp -n .env.example .env
 
 start:
-	NODE_ENV=production npm run start
+	docker-compose up app
 
 dev:
 	npx concurrently "make start-frontend" "make start-backend"
@@ -31,4 +31,4 @@ lint-fix:
 	npx eslint --fix .
 
 test:
-	docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
+	docker-compose up app-production
