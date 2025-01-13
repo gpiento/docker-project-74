@@ -3,7 +3,7 @@ name: Build, Test, and Push Docker Image
 on:
   push:
     branches:
-      - main  # Запускать только при push в ветку main
+      - main
 
 jobs:
   build-and-push:
