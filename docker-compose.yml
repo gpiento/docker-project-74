@@ -1,12 +1,12 @@
 services:
   app:
     build:
-      context: .
+      context: ./app
       dockerfile: Dockerfile
     command: make test
   app-production:
     build:
-      context: .
+      context: ./app
       dockerfile: Dockerfile.production
     image: gpiento/docker-project-74
     command: make test
