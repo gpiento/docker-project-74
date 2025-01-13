@@ -15,6 +15,11 @@ prepare-env:
 start:
 	docker-compose up app
 
+ci:
+    docker-compose -f docker-compose.yml up -d app-production
+    docker-compose -f docker-compose.yml exec app-production make test
+    docker-compose -f docker-compose.yml down
+
 dev:
 	npx concurrently "make start-frontend" "make start-backend"
 
