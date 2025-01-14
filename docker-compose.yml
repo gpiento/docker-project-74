@@ -13,8 +13,8 @@ services:
       DATABASE_PORT: ${DATABASE_PORT}
       DATABASE_USERNAME: ${DATABASE_USERNAME}
       DATABASE_PASSWORD: ${DATABASE_PASSWORD}
-    volumes:
-      - ".env.example:/.env"
+#    volumes:
+#      - ".env.example:/.env"
     depends_on:
       - db
 
