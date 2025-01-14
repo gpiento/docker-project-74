@@ -39,5 +39,4 @@ jobs:
 
       - name: Check
         run: |
-          make ansible-generate-env
           docker compose --file docker-compose.yml up --abort-on-container-exit
