@@ -8,8 +8,13 @@ services:
     image: gpiento/docker-project-74
     command: make test
     environment:
-      - DATABASE_HOST = ${DATABASE_HOST}
-      - DATABASE_PORT = ${DATABASE_PORT}
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_HOST: ${DATABASE_HOST}
+      DATABASE_PORT: ${DATABASE_PORT}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+    volumes:
+      - ".env.example:.env"
     depends_on:
       - db
 
@@ -17,7 +22,7 @@ services:
     image: postgres:latest
     environment:
       - POSTGRES_USER = ${DATABASE_USERNAME}
-      - POSTGRES_PASSWORD = ${DATABASE_PASSWORD}
+      - POSTGRES_PASSWORD = 'password'
       - POSTGRES_DB = ${DATABASE_NAME}
     volumes:
       - pgdata:/var/lib/postgresql/data
@@ -29,3 +34,4 @@ services:
 
 volumes:
   pgdata:
+  .env.example:
