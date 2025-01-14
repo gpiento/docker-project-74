@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.production
-    image: gpiento/docker-project-74
+    image: gpiento/docker-project-74:latest
     command: make test
     environment:
       DATABASE_NAME: ${DATABASE_NAME}
@@ -21,9 +21,9 @@ services:
   db:
     image: postgres:latest
     environment:
-      - POSTGRES_USER = ${DATABASE_USERNAME}
-      - POSTGRES_PASSWORD = 'password'
-      - POSTGRES_DB = ${DATABASE_NAME}
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: 'password'
+      POSTGRES_DB: ${DATABASE_NAME}
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
@@ -34,4 +34,3 @@ services:
 
 volumes:
   pgdata:
-  .env.example:
