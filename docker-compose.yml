@@ -7,6 +7,9 @@ services:
       dockerfile: Dockerfile.production
     image: gpiento/docker-project-74
     command: make test
+    environment:
+      DATABASE_HOST: ${DATABASE_HOST}
+      DATABASE_PORT: ${DATABASE_PORT}
     depends_on:
       - db
 

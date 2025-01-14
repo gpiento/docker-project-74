@@ -15,4 +15,4 @@ EXPOSE 8080
 ENV NODE_ENV=production
 RUN make build
 
-CMD [ "make start" ]
+CMD [ "make prepare-env", "make start" ]
