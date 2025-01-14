@@ -1,12 +1,16 @@
+# docker-compose.yml
+version: "3"
+
 services:
   app:
     build:
-      context: ./
+      context: .
       dockerfile: Dockerfile
     command: make test
+
   app-production:
     build:
-      context: ./
+      context: .
       dockerfile: Dockerfile.production
     image: gpiento/docker-project-74
     command: make test
