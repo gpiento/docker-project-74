@@ -5,6 +5,7 @@ localhost {
 
   # Компрессия
   encode zstd
+
   # Самоподписной сертификат
   tls internal
 
